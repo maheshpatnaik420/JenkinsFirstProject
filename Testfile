@@ -1,1 +1,7 @@
-Hey HI This is test File
+node()
+{
+  stage('firststage')
+    {
+      echo 'Hi this is my first stage'
+    }
+}
