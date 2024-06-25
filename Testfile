@@ -3,5 +3,6 @@ node()
   stage('firststage')
     {
       echo 'Hi this is my first stage'
+      checkout scm
     }
 }
