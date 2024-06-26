@@ -1,0 +1,30 @@
+{
+	"nexus": {
+		"repository": {
+			"credential": "nc"
+		}
+	},
+	"jenkins": {
+		"job": {
+			"api_token": "testapi",
+			"token": "testtoken"
+		}
+	},
+	"docker": {
+	    "image": {
+	    	"name": "imagename"
+	    },
+		"registry": {
+			"credential": "credentailsvalues"
+		}
+	},
+    "proxy": {
+		"build": {
+			"http_proxy": "http_proxy value",
+			"https_proxy": "http_proxy valuess"
+		},
+        "deploy": {
+            "credential": "deploycred"
+        }
+	}
+}
