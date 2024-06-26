@@ -12,7 +12,8 @@ def projectproperties=null
 
       projectproperties = "${env}"
 
-      echo "${projectproperties}"
+      for(e in env){
+        echo e + " is " + ${e}
 
     }
 }
