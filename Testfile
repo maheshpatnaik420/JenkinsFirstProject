@@ -1,8 +1,17 @@
 node()
 {
+def projectproperties=null
   stage('firststage')
     {
       echo 'Hi this is my first stage'
       checkout scm
     }
-}
+
+  stage('Readingstage')
+    {
+
+      projectproperties = "${env}"
+
+      echo "${projectproperties}"
+
+    }
