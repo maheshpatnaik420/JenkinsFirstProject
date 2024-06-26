@@ -12,9 +12,12 @@ def projectproperties=null
 
       projectproperties = "${env}"
 
-      for(e in env){
-        echo e + " is " + ${e}
-        }
+      script {
+                    env.keySet().each { key ->
+                        echo "${key} = ${env[key]}"
+                    }
 
     }
+}
+
 }
