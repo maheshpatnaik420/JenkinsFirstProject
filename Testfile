@@ -8,7 +8,7 @@ def projectproperties=null
     }
 
   stage ('Read project.json') {
-			projectProperties = readJSON file: "${env.WORKSPACE}/file.json"
+			projectProperties = readMavenPom()"
  			DOCKER_REGISTRY_URL = "${env.DEVOPS_DOCKER_DEV_URL}"
  			echo "DOCKER_REGISTRY_URL=${DOCKER_REGISTRY_URL}"
 			DOCKER_REGISTRY_CREDENTIAL_NAME = "${projectProperties.docker.registry.credential}"
