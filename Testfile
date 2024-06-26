@@ -7,17 +7,11 @@ def projectproperties=null
       checkout scm
     }
 
-  stage('Readingstage')
-    {
-
-      projectproperties = "${env}"
-
-      script {
-                    env.keySet().each { key ->
-                        echo "${key} = ${env[key]}"
-                    }
-
-    }
-}
+  stage ('Read project.json') {
+			projectProperties = readJSON file: "${env.WORKSPACE}/file.json"
+ 			DOCKER_REGISTRY_URL = "${env.DEVOPS_DOCKER_DEV_URL}"
+ 			echo "DOCKER_REGISTRY_URL=${DOCKER_REGISTRY_URL}"
+			DOCKER_REGISTRY_CREDENTIAL_NAME = "${projectProperties.docker.registry.credential}"
+		}
 
 }
